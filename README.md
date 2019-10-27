@@ -1,7 +1,19 @@
+# Timestamp Microservice for freeCodeCamp
 
-# API Project: Timestamp Microservice for FCC
+This is Node and Express app that takes a string and converts ito to a proper timestamp. It was created as part of the freeCodeCamp APIs and Microservices curriculum.
 
-### User stories :
+This solution is available for testing at:
+
+https://tricolor-pick.glitch.me/
+
+
+## Example usage:
+
+* https://tricolor-pick.glitch.me/api/timestamp/2015-12-15
+* https://tricolor-pick.glitch.me/api/timestamp/1450137600000
+
+
+## User stories :
 
 1. The API endpoint is `GET [project_url]/api/timestamp/:date_string?`
 2. A date string is valid if can be successfully parsed by `new Date(date_string)` (JS) . Note that the unix timestamp needs to be an **integer** (not a string) specifying **milliseconds**. In our test we will use date strings compliant with ISO-8601 (e.g. `"2016-11-20"`) because this will ensure an UTC timestamp.
@@ -10,10 +22,3 @@
 `{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }`
 e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
 5. If the date string is **invalid** the api returns a JSON having the structure `{"unix": null, "utc" : "Invalid Date" }`. It is what you get from the date manipulation functions used above.
-
-#### Example usage:
-* https://curse-arrow.hyperdev.space/api/timestamp/2015-12-15
-* https://curse-arrow.hyperdev.space/api/timestamp/1450137600000
-
-#### Example output:
-* { "unix": 1450137600, "natural": "December 15, 2015" }
