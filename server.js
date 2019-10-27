@@ -21,7 +21,6 @@ app.get("/", function (req, res) {
 
 const isValidDate = (date) => {
   let myDateStr = new Date(date);
-  console.log(myDateStr);
   if (!isNaN(myDateStr.getMonth())) {
     return true;
   }
@@ -48,7 +47,7 @@ app.get("/api/timestamp/:date_string", function (req, res) {
   let dateToParse = dateType(req.params.date_string);
   let date = new Date(dateToParse);  
   if (isValidDate(date) === false) {
-    res.json({error: "Invalid Date"});
+    res.json({unix: null, utc: "Invalid Date"});
   } else { 
     let time = date.getTime();
     let dateString = date.toUTCString();
